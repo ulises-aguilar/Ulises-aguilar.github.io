@@ -1,0 +1,156 @@
+import turtle
+def circlefill(t,x,y,r):
+	print("one circle")
+	t.penup()
+	t.goto(x-r,y+r+250)
+	t.down()
+	t.pendown()
+	t.width(25)
+	t.begin_fill()
+	t.color("#FFFFFF")
+	for i in range (1,41):
+		t.forward(40)
+		t.rt(9)
+		t.color("#FFFFFF")
+		if(i > 3):
+			t.color("#7F7F7F")
+		if(i > 6):
+			t.color("#FF0000")
+		if(i > 9):
+			t.color("#800080")
+		if(i > 12):
+			t.color("#0000FF")
+		if(i > 15):
+			t.color("#ADD8E6")
+		if(i > 18):
+			t.color("#008000")
+		if(i > 21):
+			t.color("#FFFF00")
+		if(i > 24):
+			t.color("#FFA500")
+		if(i > 27):
+			t.color("#E6E6FA")
+		if(i > 30):
+			t.color("#1E90FF")
+		if(i > 33):
+			t.color("#FFC0CB")
+		if(i > 36):
+			t.color("#a6080e")
+	t.end_fill()
+
+def ball(t):
+	s = 20
+	circlefill(t,0,0,s)
+	h = [2,5,9,7,2,2,1,1,4,8,5,1,-4,-8,-9,-6,-3,-4,-2,-2,-6,-8,-6,-2,2,4,7,8,4,2]
+	k = [3,4,1,-4,-3,3,10,13,13,11,8,10,9,8,4,2,5,9,-6,-10,-10,-6,-3,-6,-7,-5,-5,-10,-10,-7]
+	x = 0; y = 0
+
+	t.penup()
+	s = 15
+	# ************************************************
+	i = 0
+	t.begin_fill()
+	t.color("#000000")
+	while (i < 6):
+		a = h[i]
+		b = k[i]
+		print(i,a,b)
+		t.goto(a*s,b*s)
+		t.down()
+		i = i + 1
+	t.end_fill()
+	# ************************************************
+	t.penup()
+	# ************************************************
+	i = 6 
+	t.begin_fill()
+	t.color("#000000")
+	while (i < 12):
+		a = h[i]
+		b = k[i]
+		print(i,a,b)
+		t.goto(a*s,b*s)
+		t.down()
+		i = i + 1
+	t.end_fill()
+	# ************************************************
+	t.penup()
+	# ************************************************
+	i = 12 
+	t.begin_fill()
+	t.color("#000000")
+	while (i < 18):
+		a = h[i]
+		b = k[i]
+		print(i,a,b)
+		t.goto(a*s,b*s)
+		t.down()
+		i = i + 1
+	t.end_fill()
+	# ************************************************
+	t.penup()
+	# ************************************************
+	i = 18
+	t.begin_fill()
+	t.color("#000000")
+	while (i < 24):
+		a = h[i]
+		b = k[i]
+		print(i,a,b)
+		t.goto(a*s,b*s)
+		t.down()
+		i = i + 1
+	t.end_fill()
+	# ************************************************
+	t.penup()
+	# ************************************************
+	i = 24
+	t.begin_fill()
+	t.color("#000000")
+	while (i < 30):
+		a = h[i]
+		b = k[i]
+		print(i,a,b)
+		t.goto(a*s,b*s)
+		t.down()
+		i = i + 1
+	t.end_fill()
+	# ************************************************
+	t.penup()
+	t.goto(-150,0)
+	t.color("#FFFFFF")
+	t.begin_fill()
+	t.write("Messi the G.O.A.T", font=("Arial", 15, "normal"))
+	t.end_fill()
+def main():
+	try:
+		turtle.TurtleScreen._RUNNING = True
+		w = turtle.Screen()
+		w.setup(800, 800)
+		w.clear()
+		w.bgcolor("#EC9538")
+		t = turtle.Turtle()
+		ball(t)
+		w.exitonclick()
+	finally:
+		turtle.Terminator()
+
+if __name__ == '__main__':
+	main()
+	
+'''
+#apt install python3-tk
+	
+
+
+wn = turtle.Screen()   # create a turtle
+t = turtle.Turtle()
+t.color('green')      # set the color
+t.forward(50)         # draw a green line of leng
+t.up()                # lift up the tail
+t.forward(50)         # move forward 50 without drawing
+t.right(90)           # change direction to the right, left works too
+t.down()              # put the tail down
+t.backward(100)       # draw a green line 100 units long
+wn.exitonclick()
+'''
