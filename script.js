@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     canvas.height = window.innerHeight;
 
     // Customize the number of columns here
-    const numOfColumns = 80; // Change this value to increase/decrease columns
+    const numOfColumns = 150; // Change this value to increase/decrease columns
     const charSize = canvas.width / numOfColumns; // Adjust character size based on the number of columns
 
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+[]{}|;:,.<>?/~`\\'; 
