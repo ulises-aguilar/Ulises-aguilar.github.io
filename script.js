@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    setInterval(draw, 20); // Adjust speed by changing the interval
+    setInterval(draw, 100); // Adjust speed by changing the interval
 
     // Resize canvas on window resize
     window.addEventListener('resize', () => {
