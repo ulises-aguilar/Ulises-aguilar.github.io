@@ -6,14 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const charSize = 20; // Size of each character
-    const cols = Math.floor(canvas.width / charSize); // Number of columns
-    const rows = Math.floor(canvas.height / charSize); // Number of rows
+    // Customize the number of columns here
+    const numOfColumns = 80; // Change this value to increase/decrease columns
+    const charSize = canvas.width / numOfColumns; // Adjust character size based on the number of columns
 
-    // Expanded character set for a more dynamic effect
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+[]{}|;:,.<>?/~`\\'; 
-    const drops = Array.from({ length: cols }).fill(0); // Initialize drop positions
-    const dropSpeeds = Array.from({ length: cols }).map(() => Math.random() * 2 + 1); // Random speeds
+    const drops = Array.from({ length: numOfColumns }).fill(0); // Initialize drop positions
+    const dropSpeeds = Array.from({ length: numOfColumns }).map(() => Math.random() * 2 + 1); // Random speeds
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
@@ -34,11 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    setInterval(draw, 20); // Faster animation by reducing the interval
+    setInterval(draw, 20); // Adjust speed by changing the interval
 
     // Resize canvas on window resize
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        charSize = canvas.width / numOfColumns; // Recalculate character size on resize
     });
 });
