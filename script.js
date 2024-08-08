@@ -12,13 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+[]{}|;:,.<>?'; // Expanded character set
     const drops = Array.from({ length: cols }).fill(0); // Initialize drop positions
-    const dropSpeeds = Array.from({ length: cols }).map(() => Math.random() * 3 + 2); // Random speeds
+    const dropSpeeds = Array.from({ length: cols }).map(() => Math.random() * 2 + 1); // Random speeds
 
     function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-
         ctx.fillStyle = 'rgba(0, 255, 0, 0.75)'; // Green color
         ctx.font = `${charSize}px monospace`; // Font size and type
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
 
         for (let i = 0; i < drops.length; i++) {
             const char = chars[Math.floor(Math.random() * chars.length)];
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    setInterval(draw, 15); // Adjust speed by changing the interval
+    setInterval(draw, 30); // Adjust speed by changing the interval
 
     // Resize canvas on window resize
     window.addEventListener('resize', () => {
