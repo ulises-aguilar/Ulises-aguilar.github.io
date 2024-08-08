@@ -7,7 +7,7 @@ body {
 /* Set the font and background for the whole page */
 body {
     font-family: system-ui, sans-serif;
-    background: red !important; /* Added !important to override any conflicting styles */
+    background: red !important; /* Ensure this is being applied correctly */
 }
 
 /* Style the links */
@@ -49,3 +49,5 @@ nav {
 main {
     text-align: center;
 }
+
+/* Ensure there are no extra styles affecting body background */
