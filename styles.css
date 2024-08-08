@@ -1,13 +1,13 @@
-/* Reset default margins and padding */
-body, html {
+html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent scrollbars */
+    overflow: hidden;
     height: 100%;
     width: 100%;
-    background: black; /* Background color */
 }
 
-canvas {
-    display: block; /* Remove padding/margin */
-}
+#imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://stock.adobe.com/images/3d-dark-city-of-cyberspace-metaverse-digital-land
