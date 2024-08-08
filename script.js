@@ -10,14 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const cols = Math.floor(canvas.width / charSize); // Number of columns
     const rows = Math.floor(canvas.height / charSize); // Number of rows
 
-    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+[]{}|;:,.<>?'; // Expanded character set
+    // Expanded character set for a more dynamic effect
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+[]{}|;:,.<>?/~`\\'; 
     const drops = Array.from({ length: cols }).fill(0); // Initialize drop positions
     const dropSpeeds = Array.from({ length: cols }).map(() => Math.random() * 2 + 1); // Random speeds
 
     function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+
         ctx.fillStyle = 'rgba(0, 255, 0, 0.75)'; // Green color
         ctx.font = `${charSize}px monospace`; // Font size and type
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
 
         for (let i = 0; i < drops.length; i++) {
             const char = chars[Math.floor(Math.random() * chars.length)];
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    setInterval(draw, 30); // Adjust speed by changing the interval
+    setInterval(draw, 20); // Faster animation by reducing the interval
 
     // Resize canvas on window resize
     window.addEventListener('resize', () => {
