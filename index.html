@@ -14,10 +14,13 @@
 
     <script src="script.js"></script>
     <script>
-        // Function to fetch and display the IP address
+        // Function to fetch and display the IP address using ipify API
         async function fetchIpAddress() {
             try {
-                const response = await fetch('get-ip.php');
+                const response = await fetch('https://api.ipify.org?format=json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
                 const data = await response.json();
                 document.getElementById('ipAddress').textContent = `Your IP address is: ${data.ip}`;
             } catch (error) {
