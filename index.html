@@ -10,6 +10,24 @@
     <div id="imageContainer">
         <canvas id="matrixCanvas"></canvas>
     </div>
+    <div id="ipAddress">Fetching your IP address...</div> <!-- IP address display -->
+
     <script src="script.js"></script>
+    <script>
+        // Function to fetch and display the IP address
+        async function fetchIpAddress() {
+            try {
+                const response = await fetch('get-ip.php');
+                const data = await response.json();
+                document.getElementById('ipAddress').textContent = `Your IP address is: ${data.ip}`;
+            } catch (error) {
+                document.getElementById('ipAddress').textContent = 'Unable to retrieve IP address.';
+                console.error('Error fetching IP address:', error);
+            }
+        }
+
+        // Call the function to fetch and display IP address
+        fetchIpAddress();
+    </script>
 </body>
 </html>
