@@ -10,7 +10,7 @@ html, body {
     position: relative;
     width: 100%;
     height: 100vh; /* Make the container the full height of the viewport */
-    background-image: url('img/city.jpg'); /* Use the local image path */
+    background-image: url('img/messi.jpg'); /* Use the local image path */
     background-size: cover; /* Ensure the image covers the container */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
