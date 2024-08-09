@@ -9,5 +9,18 @@ html, body {
 #imageContainer {
     position: relative;
     width: 100%;
+    height: 100vh; /* Make the container the full height of the viewport */
+    background-image: url('images/city-background.jpg'); /* Use the local image path */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+#matrixCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background-image: url('https://stock.adobe.com/images/3d-dark-city-of-cyberspace-metaverse-digital-land
+    pointer-events: none; /* Ensure the canvas does not capture mouse events */
+}
