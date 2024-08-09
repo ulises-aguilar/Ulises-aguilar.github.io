@@ -24,3 +24,14 @@ html, body {
     height: 100%;
     pointer-events: none; /* Ensure the canvas does not capture mouse events */
 }
+
+#ipAddress {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    right: 10px; /* Adjust right position */
+    color: white; /* White text color */
+    font-size: 18px; /* Font size */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    padding: 5px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+}
