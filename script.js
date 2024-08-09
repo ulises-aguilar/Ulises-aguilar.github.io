@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Customize the number of columns here
     const numOfColumns = 150; // Change this value to increase/decrease columns
-    const charSize = 80; // Adjust character size based on the number of columns
+    let charSize = canvas.width / numOfColumns; // Calculate character size based on canvas width
 
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+[]{}|;:,.<>?/~`\\'; 
     const drops = Array.from({ length: numOfColumns }).fill(0); // Initialize drop positions
